@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Control : MonoBehaviour
 {
-    int damage = 10;
-    float speed = 1.0f;
+    public float speed;
+    public int health = 100;
 
     Animator animator;
-
 
     private void Start()
     {
@@ -25,27 +24,29 @@ public class Control : MonoBehaviour
             // 현재 애니메이션의 진행도가 1보다 크거나 같다면 damage 변수를 출력합니다.
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
+                health -= 10;
                 animator.Rebind();
             }
         }
-    }
-    
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        RaycastHit hit;
+
+        Ray ray = new Ray(transform.position, transform.forward);
+
+        if (Physics.Raycast(ray, out hit, 2.0f))
         {
             speed = 0.0f;
             animator.SetBool("Attack", true);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Exit")
+        else
         {
-            speed = 1.0f;
+            speed = 3.0f;
             animator.SetBool("Attack", false);
         }
     }
-
 }

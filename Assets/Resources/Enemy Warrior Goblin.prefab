@@ -1554,6 +1554,8 @@ GameObject:
   m_Component:
   - component: {fileID: 461918}
   - component: {fileID: 9507038}
+  - component: {fileID: -5032639445067016118}
+  - component: {fileID: -1392773314739565157}
   m_Layer: 0
   m_Name: Enemy Warrior Goblin
   m_TagString: Enemy
@@ -1599,6 +1601,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5032639445067016118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481cb3a67c0afc74a8250f67a87afab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  health: 100
+--- !u!65 &-1392773314739565157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 1}
+  m_Center: {x: 0, y: 2, z: 0.5}
 --- !u!1 &150940
 GameObject:
   m_ObjectHideFlags: 0

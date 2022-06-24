@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 9504128}
   - component: {fileID: 2955110689717696805}
   - component: {fileID: 8082810114373429281}
-  - component: {fileID: 3613206726145658478}
+  - component: {fileID: 2660105486974952332}
   m_Layer: 0
   m_Name: Warrior Goblin
   m_TagString: Player
@@ -2296,6 +2296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481cb3a67c0afc74a8250f67a87afab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  health: 100
 --- !u!54 &8082810114373429281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2310,9 +2312,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &3613206726145658478
+--- !u!65 &2660105486974952332
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2323,8 +2325,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4, z: 0.1}
-  m_Center: {x: 0, y: 2.5, z: 2}
+  m_Size: {x: 2, y: 5, z: 1}
+  m_Center: {x: 0, y: 2, z: 0.5}
 --- !u!1 &186020
 GameObject:
   m_ObjectHideFlags: 0
