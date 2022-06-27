@@ -969,6 +969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Church
       objectReference: {fileID: 0}
+    - target: {fileID: 1398649941229316, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4116283089868480, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1239,6 +1243,10 @@ PrefabInstance:
     - target: {fileID: 1398649941229316, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
       propertyPath: m_Name
       value: Enemy Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398649941229316, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1398649941229316, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
       propertyPath: m_TagString
