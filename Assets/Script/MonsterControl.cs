@@ -29,7 +29,6 @@ public class MonsterControl : MonoBehaviour
 
         Ray ray = new Ray(transform.position, transform.forward);
 
-
         if (Physics.Raycast(ray, out hit, 2.0f, layermask[0]))
         {
             // 애니메이터 컨트롤러에서 현재 애니메이터의 상태의 이름이“attack1”일 때 
@@ -44,16 +43,19 @@ public class MonsterControl : MonoBehaviour
             }
 
             speed = 0.0f;
+            animator.SetBool("Idle", false);
             animator.SetBool("Attack", true);
         }
         else if (Physics.Raycast(ray, out hit, 4.0f, layermask[1]))
         {
             speed = 0.0f;
+            animator.SetBool("Idle", true);
             animator.SetBool("Attack", false);
         }
         else
         {
             speed = 3.0f;
+            animator.SetBool("Idle", false);
             animator.SetBool("Attack", false);
         }
     }
