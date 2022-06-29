@@ -2304,6 +2304,7 @@ MonoBehaviour:
     m_Bits: 8
   - serializedVersion: 2
     m_Bits: 64
+  healthGauge: {fileID: 6980628152759216983}
 --- !u!65 &2660105486974952332
 BoxCollider:
   m_ObjectHideFlags: 0
