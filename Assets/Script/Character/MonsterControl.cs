@@ -24,6 +24,7 @@ public class MonsterControl : MonoBehaviour
 
         if (health <= 0)
         {
+            DataManager.instance.MoneyIncrease(100);
             Destroy(gameObject);
         }
 
