@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Control : MonoBehaviour
 {
+    int count = 0;
     public float speed;
-    public float health = 100.0f;
-    public int attack = 10;
+    public float currentHealth;
+    private float maxHealth;
+    public int attack;
 
     public LayerMask [] layermask;
     public Slider healthGauge;
@@ -15,19 +17,20 @@ public class Control : MonoBehaviour
 
     private void Start()
     {                         
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        maxHealth = currentHealth;
     }
 
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
                              
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
 
-        healthGauge.value = health / 100;
+        healthGauge.value = currentHealth / maxHealth;
 
         RaycastHit hit;
 
@@ -38,10 +41,10 @@ public class Control : MonoBehaviour
             // 애니메이터 컨트롤러에서 현재 애니메이터의 상태의 이름이“attack1”일 때 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
             {
-                if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+                if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime - count >= 1)
                 {
-                    animator.Rebind();
-                    hit.transform.GetComponent<MonsterControl>().health -= 10;
+                      count++;
+                      hit.transform.GetComponent<MonsterControl>().health -= attack;                  
                 }
             }
 
@@ -51,12 +54,14 @@ public class Control : MonoBehaviour
         }
         else if(Physics.Raycast(ray, out hit, 4.0f, layermask[1]))
         {
+            count = 0;
             speed = 0.0f;
             animator.SetBool("Idle", true);
             animator.SetBool("Attack", false);
         }
         else
         {
+            count = 0;
             speed = 3.0f;
             animator.SetBool("Idle", false);
             animator.SetBool("Attack", false);

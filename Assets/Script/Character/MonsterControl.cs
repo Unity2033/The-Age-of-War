@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MonsterControl : MonoBehaviour
 {
     public float speed;
-    public float health = 100.0f;
-    public int attack = 10;
+    public float health;
+    public int attack;
 
     public LayerMask [] layermask;
     public Slider healthGauge;
@@ -43,7 +43,7 @@ public class MonsterControl : MonoBehaviour
                 if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
                 {
                     animator.Rebind();
-                    hit.transform.GetComponent<Control>().health -= 10;
+                    hit.transform.GetComponent<Control>().currentHealth -= attack;
                 }
             }
 
