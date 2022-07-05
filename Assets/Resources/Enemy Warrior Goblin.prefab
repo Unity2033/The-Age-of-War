@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 461918}
   - component: {fileID: 9507038}
   - component: {fileID: -1392773314739565157}
-  - component: {fileID: -7410752261547106108}
+  - component: {fileID: 8755556939707456604}
   m_Layer: 3
   m_Name: Enemy Warrior Goblin
   m_TagString: Enemy
@@ -1615,7 +1615,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 5, z: 1}
   m_Center: {x: 0, y: 2, z: 0.5}
---- !u!114 &-7410752261547106108
+--- !u!114 &8755556939707456604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1624,11 +1624,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 150878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b5f9fc122796e469527984c236ce7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 481cb3a67c0afc74a8250f67a87afab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  health: 100
+  currentHealth: 100
   attack: 10
   layermask:
   - serializedVersion: 2

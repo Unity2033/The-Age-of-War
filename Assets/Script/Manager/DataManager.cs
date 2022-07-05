@@ -21,12 +21,22 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        Load();    
+        Load();
     }
 
     private void Update()
     {
         moneyText.text = stuff.money.ToString();
+    }
+
+    public IEnumerator Increase()
+    {
+        while(GameManager.instace.state)
+        {
+            yield return new WaitForSeconds(1f);
+            stuff.money += 50;
+            Save();
+        }
     }
 
     public void MoneyIncrease(int value)

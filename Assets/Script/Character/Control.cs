@@ -44,7 +44,15 @@ public class Control : MonoBehaviour
                 if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime - count >= 1)
                 {
                       count++;
-                      hit.transform.GetComponent<MonsterControl>().health -= attack;                  
+                                        
+                    if(hit.collider.tag == "Enemy")
+                    {
+                        hit.transform.GetComponent<Control>().currentHealth -= attack;
+                    }
+                    else if (hit.collider.tag == "Base")
+                    {
+                        hit.transform.GetComponent<BaseStation>().currentHealth -= attack;
+                    }
                 }
             }
 

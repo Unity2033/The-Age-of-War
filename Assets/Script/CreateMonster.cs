@@ -9,7 +9,7 @@ public class CreateMonster : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("EnemyInstance", 0, 5);
+        InvokeRepeating("EnemyInstance", 0, 1);
     }
 
     public void Create(string name)
@@ -17,34 +17,49 @@ public class CreateMonster : MonoBehaviour
         switch(name)
         {
             case "Goblin":
-                Instantiate
+                if(Infomation.instance.data[0].price <= DataManager.instance.stuff.money)
+                {
+                    DataManager.instance.stuff.money -= Infomation.instance.data[0].price;
+
+                    Instantiate
                     (
                        Resources.Load<GameObject>("Warrior Goblin"),
                        new Vector3(-20, 0, 30),
                        Quaternion.Euler(0, 90, 0)
                     );
 
-                StartCoroutine(Wait(3.0f, createButton[0]));
+                    StartCoroutine(Wait(3.0f, createButton[0]));
+                }
                 break;
             case "Troll":
-                Instantiate
+                if (Infomation.instance.data[1].price <= DataManager.instance.stuff.money)
+                {
+                    DataManager.instance.stuff.money -= Infomation.instance.data[1].price;
+
+                    Instantiate
                     (
                        Resources.Load<GameObject>("Troll"),
                        new Vector3(-20, 0, 30),
                        Quaternion.Euler(0, 90, 0)
                     );
 
-                StartCoroutine(Wait(5.0f, createButton[1]));
+                    StartCoroutine(Wait(5.0f, createButton[1]));
+                }
                 break;
             case "Wizard":
-                Instantiate
+                if (Infomation.instance.data[2].price <= DataManager.instance.stuff.money)
+                {
+                    DataManager.instance.stuff.money -= Infomation.instance.data[2].price;
+
+                    Instantiate
                     (
                        Resources.Load<GameObject>("Wizard"),
                        new Vector3(-20, 0, 30),
                        Quaternion.Euler(0, 90, 0)
                     );
 
-                StartCoroutine(Wait(10.0f, createButton[2]));
+                    StartCoroutine(Wait(10.0f, createButton[2]));
+                }
                 break;
         }
     }
